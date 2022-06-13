@@ -10,20 +10,21 @@ namespace KiemTra_NguyenCongDat.Controllers
     public class HocPhanController : Controller
     {
         MyDataDataContext data = new MyDataDataContext();
-        // GET: HocPhan
-        [HttpGet]
-        public ActionResult DangKyHocPhan()
+        public List<HocPhan> Layhocphan()
         {
-            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString()=="")
+            List<HocPhan> lstHocphan = Session["Đăng Ký"] as List<HocPhan>;
+            if (lstHocphan == null)
             {
-                return RedirectToAction("DangNhap","NguoiDung");
+                lstHocphan = new List<HocPhan>();
+                Session["Đăng Ký"] = lstHocphan;
             }
-            if (Session["HocPhan"]==null)
-            {
-                return RedirectToAction("Index", "SinhVien");
-            }
-            List<HocPhan> hocPhans = LayHocPhan();
-            ViewBag.
+            return lstHocphan;
+        }
+        // GET: HocPhan
+        public ActionResult Index()
+        {
+            var HocPhans = from ss in data.HocPhans select ss;
+            return View(HocPhans);
         }
     }
 }

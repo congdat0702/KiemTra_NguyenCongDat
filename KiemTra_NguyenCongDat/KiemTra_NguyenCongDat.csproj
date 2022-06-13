@@ -187,7 +187,7 @@
     <Content Include="Views\SinhVien\Create.cshtml" />
     <Content Include="Views\SinhVien\Edit.cshtml" />
     <Content Include="Views\SinhVien\Delete.cshtml" />
-    <Content Include="Views\SinhVien\Detail.cshtml" />
+    <Content Include="Views\SinhVien\Details.cshtml" />
     <Content Include="Views\HocPhan\Index.cshtml" />
     <Content Include="Views\NguoiDung\DangKy.cshtml" />
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />

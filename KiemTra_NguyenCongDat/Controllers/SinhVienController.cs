@@ -17,7 +17,7 @@ namespace KiemTra_NguyenCongDat.Controllers
             var SinhViens = from ss in data.SinhViens select ss;
             return View(SinhViens);
         }
-        public ActionResult Detail(string id)
+        public ActionResult Details(string id)
         {
             var S_SinhVien = data.SinhViens.Where(m => m.MaSV == id).First();
 
